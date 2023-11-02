@@ -11,9 +11,9 @@ def clustered_binary_insertion_sort(array):
         cop = i
         key = array[cop]
         if key >= array[pop]:
-            place = binary_search(array, pop+1, cop-1, key)
+            place = binary_loc_finder(array, pop+1, cop-1, key)
         else:
-            place = binary_search(array, 0, pop-1, key)
+            place = binary_loc_finder(array, 0, pop-1, key)
         pop = place
         array = place_inserter(array, place, i)
         i += 1
@@ -32,7 +32,7 @@ def place_inserter(array, start, end):
     return array
 
 
-def binary_search(array, start, end, key):
+def binary_loc_finder(array, start, end, key):
     '''The function returns the index of the key in the array.
     \nIt accepts the following parameters:
     - array: the array to be searched
@@ -40,21 +40,22 @@ def binary_search(array, start, end, key):
     - end: the rightmost index of the array
     - key: the key to be searched
     '''
-    if end > start:
-        mid = (end + start) // 2
-        if array[mid] == key:
-            return mid
-        elif array[mid] > key:
-            return binary_search(array, start, mid - 1, key)
-        else:
-            return binary_search(array, mid + 1, end, key)
-    elif end == start:
+    if start == end:
         if array[start] > key:
             return start
         else:
             return start + 1
-    else:
+    elif start > end:
         return start
+    else:
+        mid = (end + start) // 2
+        if array[mid] < key:
+            return binary_loc_finder(array, mid + 1, end, key)
+        elif array[mid] > key:
+            return binary_loc_finder(array, start, mid - 1, key)
+        else:
+            return mid
+            
 
 def randomized_quick_sort(array, left, right):
     '''The function recursively sorts the array in place and returns nothing.
