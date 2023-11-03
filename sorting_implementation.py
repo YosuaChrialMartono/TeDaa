@@ -1,6 +1,5 @@
 import random
-import copy
-def clustered_binary_insertion_sort(array):
+def clustered_binary_insertion_sort(array, *args, **kwargs):
     '''The function sorts the array in place using \
         clustered binary insertion sort and returns nothing.
     \nIt accepts the following parameters:
@@ -89,24 +88,8 @@ def randomized_partition(array, left, right):
     array[last_filled], array[right] = array[right], array[last_filled]
     return last_filled
 
-def dataset_reader(filepath):
-    '''This function read the dataset from the file and returns \
-        an array containing the dataset.
-    '''
-    array = []
-    with open(filepath, 'r') as f:
-        for line in f:
-            array.append(int(line))
-    return array
-
 def main():
-    array = dataset_reader("debug_random.txt")
-    cbis_test_array = copy.deepcopy(array)
-    rqs_test_array = copy.deepcopy(array)
-    print(array)
-    clustered_binary_insertion_sort(array)
-
-    print(array)
+    return None
 
 if __name__ == "__main__":
     main()
