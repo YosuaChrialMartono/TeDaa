@@ -1,0 +1,127 @@
+small_random_array: 200 elements
+clustered_binary_insertion_sort
+Running time: 1.010894775390625 ms
+-------------------------
+Current memory usage: 0.58 KB 
+Peak memory usage: 0.69 KB
+
+small_random_array: 200 elements
+randomized_quick_sort
+Running time: 0.0 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.08 KB
+
+medium_random_array: 2000 elements
+clustered_binary_insertion_sort
+Running time: 44.84701156616211 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.63 KB
+
+medium_random_array: 2000 elements
+randomized_quick_sort
+Running time: 5.368947982788086 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 2.36 KB
+
+large_random_array: 20000 elements
+clustered_binary_insertion_sort
+Running time: 4465.311050415039 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.82 KB
+
+large_random_array: 20000 elements
+randomized_quick_sort
+Running time: 208.97364616394043 ms
+-------------------------
+Current memory usage: 89.51 KB 
+Peak memory usage: 122.53 KB
+
+small_sorted_array: 200 elements
+clustered_binary_insertion_sort
+Running time: 0.0 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.11 KB
+
+small_sorted_array: 200 elements
+randomized_quick_sort
+Running time: 0.0 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.08 KB
+
+medium_sorted_array: 2000 elements
+clustered_binary_insertion_sort
+Running time: 0.0 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.19 KB
+
+medium_sorted_array: 2000 elements
+randomized_quick_sort
+Running time: 1.9965171813964844 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 1.48 KB
+
+large_sorted_array: 20000 elements
+clustered_binary_insertion_sort
+Running time: 6.512641906738281 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.19 KB
+
+large_sorted_array: 20000 elements
+randomized_quick_sort
+Running time: 34.20829772949219 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 2.19 KB
+
+small_reversed_array: 200 elements
+clustered_binary_insertion_sort
+Running time: 1.0328292846679688 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.11 KB
+
+small_reversed_array: 200 elements
+randomized_quick_sort
+Running time: 0.0 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.08 KB
+
+medium_reversed_array: 2000 elements
+clustered_binary_insertion_sort
+Running time: 111.12260818481445 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.20 KB
+
+medium_reversed_array: 2000 elements
+randomized_quick_sort
+Running time: 5.002737045288086 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 1.42 KB
+
+large_reversed_array: 20000 elements
+clustered_binary_insertion_sort
+Running time: 8774.443626403809 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 0.20 KB
+
+large_reversed_array: 20000 elements
+randomized_quick_sort
+Running time: 31.536102294921875 ms
+-------------------------
+Current memory usage: 0.00 KB 
+Peak memory usage: 1.97 KB
+
+

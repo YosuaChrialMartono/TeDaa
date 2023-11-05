@@ -19,10 +19,9 @@ def memory_experiment(array, sorting_function):
     sorting_function(array, left = 0, right = len(array) - 1)
 
     current, peak = tracemalloc.get_traced_memory()
-    print(f"Current memory usage: {current / (1024 * 1024):.2f} MB")
-    print(f"Peak memory usage: {peak / (1024 * 1024):.2f} MB")
     tracemalloc.stop()
     tracemalloc.reset_peak()
+    return (f"Current memory usage: {current / 1024:.2f} KB \nPeak memory usage: {peak / (1024):.2f} KB")
 
 
 def profile_running_time(array, sorting_function):
@@ -30,7 +29,7 @@ def profile_running_time(array, sorting_function):
     start_time = time.time()
     sorting_function(array, left = 0, right = len(array) - 1)
     end_time = time.time()
-    print("Running time: " + str((end_time - start_time) * 1000000))
+    return ("Running time: " + str((end_time - start_time) * 1000) + " ms" + "\n" + "-------------------------")
 
 if __name__ == "__main__":
     small_random_array = dataset_reader('dataset/small_random.txt')
@@ -63,13 +62,18 @@ if __name__ == "__main__":
                      [medium_reversed_array, randomized_quick_sort, "medium_reversed_array"],
                      [large_reversed_array, clustered_binary_insertion_sort, "large_reversed_array"],
                      [large_reversed_array, randomized_quick_sort, "large_reversed_array"]]
+    testing_output = ""
     for array in testing_array:
-        print(array[2] + ": " + str(len(array[0])) + " elements")
-        print(array[1].__name__)
+        testing_output += (array[2] + ": " + str(len(array[0])) + " elements")
+        testing_output += "\n"
+        testing_output += (array[1].__name__)
+        testing_output += "\n"
         time_array_test = deepcopy(array[0])
         memory_array_test = deepcopy(array[0])
-        profile_running_time(time_array_test, array[1])
-        memory_experiment(memory_array_test, array[1])
+        testing_output += profile_running_time(time_array_test, array[1])
+        testing_output += "\n"
+        testing_output += memory_experiment(memory_array_test, array[1])
+        testing_output += "\n\n"
         assert time_array_test == sorted(array[0])
         assert memory_array_test == sorted(array[0])
-        print()
+    print(testing_output, file = open("testing_output.txt", "w"))
