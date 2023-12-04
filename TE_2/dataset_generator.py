@@ -1,4 +1,5 @@
 from random import randint
+import random
 
 def dataset_generator(set_size, max_number=100):
     """
@@ -28,16 +29,18 @@ def dataset_generator(set_size, max_number=100):
                 if element not in set_1:
                     set_2[rand_index] = element
                     break
-            
+    print(sum(set_1), sum(set_2), sum(set_1 + set_2))
 
 
     return set_1, set_2, set_1 + set_2
 
+def dataset_generation(filepath, high_sum, size=10):
+    with open(filepath, 'w') as f:
+        random.seed(686)
+        output = dataset_generator(size,high_sum)
+        for i in output[2]:
+            f.write(str(i) + '\n')
 
-small_dataset = dataset_generator(10,100)
-medium_dataset = dataset_generator(40,400)
-large_dataset = dataset_generator(80,800)
-
-print(sum(small_dataset[0]), sum(small_dataset[1]))
-print(sum(medium_dataset[0]), sum(medium_dataset[1]))
-print(sum(large_dataset[0]), sum(large_dataset[1]))
+dataset_generation("TE 2/dataset/small_dataset.txt", 100, 10)
+dataset_generation("TE 2/dataset/medium_dataset.txt", 200, 40)
+dataset_generation("TE 2/dataset/large_dataset.txt", 400, 80)
